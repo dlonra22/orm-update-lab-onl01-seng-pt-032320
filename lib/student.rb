@@ -43,6 +43,13 @@ def self.create(name:,grade:)
   student.save
   student
 end
+
+def self.new_from_db(row)
+  student = self.new()
+  student.id = row[0]
+  student.name = row[1]
+  student.grade = row[2]
+  
   
         
     
