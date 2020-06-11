@@ -37,6 +37,9 @@ def save
     @id = DB[:conn].execute("SELECT last_row_id() FROM students")[0][0]
   end
 end
+
+def self.create()
+  
         
     
         
