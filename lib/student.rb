@@ -60,8 +60,17 @@ def self.find_by_name(name)
         SQL
   DB[:conn].execute(sql,name).collect do |row|
     self.new_from_db(row)
-  end
-  
+  end.first
+end
+
+def update
+  sql = <<-SQL
+        UPDATE students
+        SET name = ?, grade = ?
+        WHERE id = ?
+        SQL
+  DB[:conn].execute(sql,self.name,self.grade,self.id)  
+end
   
         
     
