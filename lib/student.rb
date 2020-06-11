@@ -45,12 +45,7 @@ def self.create(name,grade)
 end
 
 def self.new_from_db(row)
-  nme=nil
-  grde =nil
-  student = self.new(nme,grde)
-  student.id = row[0]
-  student.name = row[1]
-  student.grade = row[2]
+  student = self.new(row[0],row[1],row[2])
   student
 end
 
